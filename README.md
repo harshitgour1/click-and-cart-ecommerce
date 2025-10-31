@@ -1,7 +1,7 @@
 # Click & Cart - E-Commerce Application
 
 > **Developer**: Harshit Goud  
-> **Date**: November 1, 2025
+> **Date**: October 31, 2025
 
 A modern, full-featured e-commerce web application built with Next.js 14+ that demonstrates multiple rendering strategies (SSG, ISR, SSR, CSR) and includes shopping cart functionality, product management, and beautiful UI with Indian-inspired design.
 
@@ -79,10 +79,6 @@ npm run dev
 ```
 
 6. **Open your browser** and visit [http://localhost:3000](http://localhost:3000)
-
-## 📦 Complete Setup & Deployment
-
-**For detailed deployment instructions to Vercel, see [DEPLOYMENT.md](./DEPLOYMENT.md)**
 
 ## 🎯 Features
 
@@ -176,20 +172,6 @@ The application includes **32 pre-seeded products** across 8 categories:
 
 All products include high-quality images from Unsplash. See [PRODUCT_IMAGES.md](./PRODUCT_IMAGES.md) for details.
 
-## 🚀 Deployment to Vercel
-
-This project is optimized for Vercel deployment. Simply:
-
-1. Push your code to GitHub
-2. Import the repository in [Vercel](https://vercel.com)
-3. Add environment variables in Vercel dashboard:
-   - `MONGODB_URI`
-   - `ADMIN_API_KEY`
-   - `NEXT_PUBLIC_APP_URL`
-   - `NODE_ENV=production`
-4. Deploy!
-
-**For detailed step-by-step deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)**
 
 ## 🧪 Testing
 
@@ -258,7 +240,7 @@ Get current user session
 
 ## 🤝 Contributing
 
-This is a portfolio/assignment project. Feel free to fork and customize!
+This is a assignment project. Feel free to fork and customize!
 
 ## 📄 License
 
@@ -267,7 +249,7 @@ MIT - Free to use for educational purposes
 ## 👨‍💻 Developer Information
 
 **Developer**: Harshit Goud  
-**Date**: November 1, 2025  
+**Date**: October 31, 2025  
 **Repository**: [github.com/harshitgour1/e-commerce-app](https://github.com/harshitgour1/e-commerce-app)
 
 ---
