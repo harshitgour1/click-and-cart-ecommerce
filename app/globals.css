@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Indian-inspired fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Indian color palette variables */
+  --color-saffron: 255, 136, 51;
+  --color-royal-blue: 64, 128, 255;
+  --color-terracotta: 232, 122, 93;
+  --color-emerald: 16, 185, 104;
+  --color-gold: 212, 165, 116;
+  --color-neutral: 120, 113, 108;
+  
+  /* Background colors (soft & eye-friendly) */
+  --bg-primary: 250, 250, 249;
+  --bg-secondary: 245, 245, 244;
+  --bg-accent: 255, 248, 240;
+  
+  /* Text colors */
+  --text-primary: 41, 37, 36;
+  --text-secondary: 87, 83, 78;
+  --text-muted: 168, 162, 158;
+  
+  /* Legacy variables for backward compatibility */
+  --foreground-rgb: 41, 37, 36;
+  --background-start-rgb: 255, 248, 240;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: 28, 25, 23;
+    --bg-secondary: 41, 37, 36;
+    --bg-accent: 68, 64, 60;
+    
+    --text-primary: 250, 250, 249;
+    --text-secondary: 214, 211, 209;
+    --text-muted: 168, 162, 158;
+    
+    --foreground-rgb: 250, 250, 249;
+    --background-start-rgb: 28, 25, 23;
+    --background-end-rgb: 41, 37, 36;
+  }
+}
+
+body {
+  color: rgb(var(--text-primary));
+  background: rgb(var(--bg-primary));
+  font-family: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* Typography hierarchy with Indian-inspired fonts */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: rgb(var(--text-primary));
+}
+
+h1 {
+  @apply text-4xl sm:text-5xl;
+}
+
+h2 {
+  @apply text-3xl sm:text-4xl;
+}
+
+h3 {
+  @apply text-2xl sm:text-3xl;
+}
+
+p {
+  line-height: 1.6;
+  color: rgb(var(--text-secondary));
+}
+
+.font-accent {
+  font-family: 'Playfair Display', 'Noto Serif Devanagari', serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Indian theme animation keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  @keyframes bounceSubtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-4px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(4px);
+    }
+  }
+  
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes mandalaRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes paisleyFade {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes celebration {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.2) rotate(5deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    75% {
+      transform: scale(1.15) rotate(3deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  /* Animation utility classes */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      rgb(var(--bg-secondary)) 0%,
+      rgb(var(--bg-accent)) 20%,
+      rgb(var(--bg-secondary)) 40%,
+      rgb(var(--bg-secondary)) 100%
+    );
+    background-size: 1000px 100%;
+  }
+  
+  .animate-mandala {
+    animation: mandalaRotate 3s linear infinite;
+  }
+  
+  .animate-paisley {
+    animation: paisleyFade 2s ease-in-out infinite;
+  }
+  
+  .animate-celebration {
+    animation: celebration 0.6s ease-in-out;
+  }
+  
+  .animate-shake {
+    animation: shake 0.4s ease-in-out;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  button, a, input, select, textarea {
+    @apply transition-all duration-200;
+  }
+  
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Focus visible styles for better keyboard navigation */
+@layer utilities {
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron-500 focus-visible:ring-offset-2;
+  }
+  
+  /* Indian theme utility classes */
+  .bg-indian-gradient {
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D1 50%, #F0F4FF 100%);
+  }
+  
+  .bg-saffron-gradient {
+    background: linear-gradient(135deg, #FF8833 0%, #E67A2E 100%);
+  }
+  
+  .bg-royal-gradient {
+    background: linear-gradient(135deg, #4080FF 0%, #3366CC 100%);
+  }
+  
+  .text-indian-primary {
+    color: rgb(var(--text-primary));
+  }
+  
+  .text-indian-secondary {
+    color: rgb(var(--text-secondary));
+  }
+  
+  .text-indian-muted {
+    color: rgb(var(--text-muted));
+  }
+  
+  .shadow-indian {
+    box-shadow: 0 4px 20px -2px rgba(255, 136, 51, 0.15), 0 2px 8px -1px rgba(255, 136, 51, 0.1);
+  }
+  
+  .shadow-lift {
+    box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Hover lift effect for cards */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Button press effect */
+  .active-press:active {
+    transform: scale(0.97);
+  }
+  
+  /* Backdrop blur for modals and overlays */
+  .backdrop-indian {
+    backdrop-filter: blur(8px);
+    background-color: rgba(var(--bg-primary), 0.8);
+  }
+}
