@@ -17,9 +17,9 @@ async function apiRequest<T>(
 ): Promise<ApiResponse<T>> {
   const { requiresAuth = false, retries = 1, ...fetchOptions } = options
   
-  const headers: HeadersInit = {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
-    ...fetchOptions.headers,
+    ...(fetchOptions.headers as Record<string, string>),
   }
   
   // Add API key for authenticated requests

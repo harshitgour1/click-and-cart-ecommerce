@@ -12,7 +12,8 @@
     "test:ui": "vitest --ui",
     "db:seed": "tsx lib/db/seed.ts",
     "db:reset": "tsx lib/db/reset.ts",
-    "db:reset:force": "tsx lib/db/reset.ts --force"
+    "db:reset:force": "tsx lib/db/reset.ts --force",
+    "verify": "node verify-deployment.js"
   },
   "dependencies": {
     "dotenv": "^17.2.3",

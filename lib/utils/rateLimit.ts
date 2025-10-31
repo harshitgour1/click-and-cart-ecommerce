@@ -109,11 +109,15 @@ export function getRateLimitErrorResponse(resetTime: number) {
  */
 export function cleanupRateLimitStore(): void {
   const now = Date.now()
-  for (const [key, entry] of rateLimitStore.entries()) {
+  const entriesToDelete: string[] = []
+  
+  rateLimitStore.forEach((entry, key) => {
     if (now > entry.resetTime) {
-      rateLimitStore.delete(key)
+      entriesToDelete.push(key)
     }
-  }
+  })
+  
+  entriesToDelete.forEach(key => rateLimitStore.delete(key))
 }
 
 // Cleanup every 5 minutes

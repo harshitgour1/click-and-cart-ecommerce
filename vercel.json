@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["sin1"],
+  "env": {
+    "MONGODB_URI": "@mongodb_uri",
+    "ADMIN_API_KEY": "@admin_api_key",
+    "NEXT_PUBLIC_APP_URL": "@next_public_app_url"
+  }
+}
